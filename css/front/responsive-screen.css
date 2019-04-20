@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Table of Contents
+-----------------------------
+1. Mobile
+2. iPad
+3. large desktop
+*/
+
+/* 1. Mobile responsive css 767px
+-----------------------------------*/
+@media (max-width:767px) {
+
+    body{min-width: inherit;}
+    .container{width: 100%;padding-left: 15px;padding-right: 15px;text-align: center;}
+    h1, h2{font-size: 27px;line-height: 36px;}
+
+    /*----   header   ----*/
+    header{padding-top: 10px;padding-bottom: 14px;}
+    header .brand{width: 80px;}
+    header.sticky{transform: translateY(87px);-webkit-transform: translateY(87px);margin-top: -87px;}
+    .social-feed{display: none;}
+    header nav  .social-feed{display: block;background: rgba(240, 243, 246, 0.75);margin-top: 20px;opacity: 0;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+    header nav.act  .social-feed{opacity: 1;}
+
+    /* mobile menu */
+    .menu-trigger{display: block;width: 50px;height: 50px;position: absolute;-ms-touch-action: manipulation;touch-action: manipulation;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-image: none;white-space: nowrap;z-index: 999999;right: 10px;top: 10px;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+    .menu-trigger.act{position: fixed}
+    .menu-trigger span, .menu-trigger span:after, .menu-trigger span:before{background: #2891f9;height: 4px;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;} 
+    .menu-trigger span{position: absolute;display: block;width: 34px;left: 50%;top: 50%;transform: translate(-50% , -50%);-webkit-transform: translate(-50% , -50%);-moz-transform: translate(-50% , -50%)}
+    .menu-trigger span:after, .menu-trigger span:before{content: '';position: absolute;left: 0;width: 100%;}
+    .menu-trigger span:before{top: -9px;}
+    .menu-trigger span:after{bottom: -9px;}
+    .menu-trigger.act span{background-color: rgba(0,0,0,.0)}
+    .menu-trigger.act span:before{top: 0;transform: rotate(45deg);-webkit-transform: rotate(45deg);background: #fff}
+    .menu-trigger.act span:after{top: 0;transform: rotate(-45deg);-webkit-transform: rotate(-45deg);background: #fff}
+    header nav{position: fixed;top: 0;left: 0;width: 100%;height: 100vh;text-align: center;padding: 30px 0!important;background: rgba(40, 145, 248, 0.97); opacity: 0;-webkit-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);-webkit-transform: scale(0);transform: scale(0);}
+    header nav.act{ opacity: 1;-webkit-transform: scale(1);transform: scale(1);}
+    header nav li{display: block;margin: 10px 0; -webkit-transition: all 400ms 510ms;transition: all 400ms 510ms;opacity: 0;}
+    header nav li:nth-child(even) {-webkit-transform: translateX(-30%);transform: translateX(-30%);}
+    header nav li:nth-child(odd) {-webkit-transform: translateX(30%);transform: translateX(30%);}
+    header nav.act li{opacity: 1;-webkit-transform: translateX(0);transform: translateX(0);}
+    header nav li a{margin: 0;font-size: 24px;line-height: 35px;color: #fff;}
+    header nav li a:hover, header nav li.active a{color: #ed4166}
+        .scroll-hidden{position: fixed;}
+
+    /*--------- home page ------------*/
+    .row{margin: 0;}
+    .col-6, .col-4,.col-8 {width: 100%;}
+   .top-banner .parallax{top: auto !important;bottom: -60px;position: absolute}
+    .top-banner{text-align: center;background-size: cover;padding-top: 130px;height: 490px;}
+    .top-banner .mobile-img{bottom: -48px;}
+    .app-btn{padding-top: 25px;}
+    .app-btn a{margin: 0 15px;background-size: 130px; width: 180px;height: 58px;border-radius: 40px}
+    .intro-img{width: 100%;margin: 0;padding: 0;padding-bottom: 25px;}
+    .intro-img img{display: block;margin: auto;max-width: 300px}
+    .intro-detail{width: 100%;padding: 0;margin: 0;padding-bottom: 20px;}
+    .inroduction h3{font-size: 22px;line-height: 30px;}
+    .inroduction{padding-top: 50px;}
+    .slider-main{padding: 0;}
+    .checkup-img{margin-top: -20%;margin-left: 0;}
+    .checkup-img img{max-width: 200px;display: block;margin: auto}
+    .health-checkup .fleft{padding: 20px 0;}  
+    .health-checkup .box{padding: 10px;margin-top: 20px;text-align: left}
+    .health-checkup .box img{max-width: 45px}
+    .visit-side .graphics img{max-width: 200px;display: block;margin: auto}
+    .contact-form{position: relative;top: 0;left: 0;transform: translate(0);-webkit-transform: translate(0)}
+    #map{max-height: calc(100vh - 150px)}
+    .contact-detail{position: relative;width: 100%;}
+    .our-partner .partner-brand{max-width: 150px;display: inline-block !important;float:none !important;}    
+    .showcase-carousel .showcase-item{max-width: 150px;margin: 0 20px;}
+    .showcase-wrapper:before{background-size: 196px 396px;top: 63px;}
+    .slick-nav{background-size: 50px;width: 26px;height: 34px;top:calc(50% - 17px)}
+    .slick-nav.next{right: 15px;}
+    .slick-nav.prev{left: 15px;}
+    .showcase-carousel{width: 90%; padding-bottom: 25px;padding-top: 83px;}
+    .showcase-wrapper{padding-top: 30px;}
+    .section-title.desk{display: none;}
+    .section-title.mobile{display: block;}
+    .android-slider-bkg, .hire-non-medical .android-slider-bkg, .hire-medical .android-slider-bkg{width: 300px;margin: 0 auto;background-size: 100%;padding-top: 63px;padding-bottom: 77px;margin-top: 20px;}
+    .android-slider{width: 210px;}
+    .android-slider-nav .graphics{max-width: 50px}
+    .android-slider-nav .slider-nav span{display: none;}
+    .android-slider-nav .slider-nav{padding: 10px 20px;}
+    .slider-tab{padding: 0;}
+    .hire-medical{padding-top: 30px;}
+    .contact-detail span{font-size: 14px;}
+    .contact-detail a, .contact-detail .cont-adr{font-size: 20px;line-height: 28px;}
+    .contact-detail .contact-line{padding-top: 18px;}
+    .contact-detail h3{font-size: 25px;}
+    .contact-form h3{font-size: 25px;}
+    .our-partner .partner-carousel{margin-top: 10px;}
+    .our-partner{padding-top: 60px;padding-bottom: 30px;}
+    .visit-side p{font-size: 20px;line-height: 25px;}
+    .absolute-graphics{display: none;}
+
+}
+
+/* 2. iPad responsive css 768px to 1023px
+-----------------------------------------*/
+@media (min-width:768px) and (max-width:1023px) {
+
+    /* default  */
+    body{min-width: inherit;}
+    h1, h2{font-size: 36px;line-height: 45px;}
+    .container{width: 100%;padding-left: 15px;padding-right: 15px;}
+    .row{margin: 0;}
+    header nav li a{margin-left: 40px;}
+    .top-banner .parallax{top: auto !important;bottom: -131px;position: absolute}
+    .top-banner{text-align: center;height: 660px;}
+    .app-btn a{margin: 0 15px;}
+    .top-banner .col-6{width: 100%;}
+    .app-btn{margin-top: 35px;}
+    .intro-img{width: 100%;display: block;margin-bottom: 20px;}
+    .intro-img img{display: block;margin: auto}
+    .intro-detail{width: 100%;display: block;}
+    .health-checkup .fleft{padding: 50px 0;}
+    .checkup-img img{max-width: 100%}
+    .checkup-img{margin-top: -60px;margin-left: 0;}
+    .health-checkup .col-6{width: 100%;padding-left: 0;}
+    .health-checkup .box{margin-top: 20px;padding: 15px 10px;}
+    .android-slider-bkg{width: 350px;background-size: 100%;padding-top: 80px;}
+    .android-slider{width: 240px;}
+    .hire-medical .android-slider-bkg{margin-left: -50px;}
+    .android-slider-nav .graphics{max-width: 60%}
+    .android-slider-nav .slider-nav{padding: 15px;margin-top: 25px;}
+    .android-slider-nav .slider-nav span{font-size: 15px;}
+    .hire-non-medical {overflow: hidden;}
+    .hire-non-medical .slider-tab{padding-left: 0;padding-right: 40px;}
+    .hire-non-medical .android-slider-bkg{margin-left: -75px;}
+    .visit-side .graphics img{max-width: 100%;margin-left: 0;}
+    .contact-detail{height: 600px;width: 44%;}
+    .showcase-carousel .showcase-item{width: 230px;}
+    .showcase-carousel{width: 90%;}
+    #map{height: 600px;}
+    .contact-form{position: relative;top: 0;left: 0;transform: translate(0);-webkit-transform: translate(0)}
+    .showcase-wrapper:before{background-size: 300px 606px;top: 100px;}
+    .slick-nav.next{right: 20px;}
+    .slick-nav.prev{left: 20px;}
+    .absolute-graphics{display: none;}
+}
+
+/* 3. large desktop responsive css 1025px to 1169px
+----------------------------------------------------*/
+@media (min-width:1024px) and (max-width:1169px) {	
+    .top-banner .parallax{top: auto !important;bottom: -131px;position: absolute}
+    .container{padding-left: 20px;padding-right: 20px;width: 100%;}
+    .checkup-img img{max-width: 100%}
+    .checkup-img{margin-left: 0;}
+    .row{margin-right: -8px;margin-left: -8px;}
+    .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1{padding-left: 8px;padding-right: 8px;}
+    .android-slider{width: 250px;}
+    .android-slider-bkg{width: 360px;background-size: 100%;padding-top: 77px;}
+    .visit-side .graphics img{max-width: 100%;margin-left: 0;}
+    .android-slider-nav .slider-nav{padding: 20px 10px;}
+    .app-btn a{width: 225px;margin-left: 14px;}
+    .absolute-graphics{display: none;}
+}
+@media (min-width:1171px) and (max-width:1300px) {	
+    .absolute-graphics{width: 70px;}
+    .hire-medical .absolute-graphics {right: 0;bottom: -22px;}
+    .visit-side .absolute-graphics{right: 0;}
+    .health-checkup .absolute-graphics{left: 0;}
+    .hire-non-medical .android-slider-bkg{ margin-left: 0;width: auto;background-position: -52px;}
+    .hire-medical .android-slider-bkg {margin-left: 0;padding-right: 8px;width: auto;background-position: -49px;}
+}
+@media (min-width:1301px) and (max-width:1560px) {	
+    .absolute-graphics{width: 80px;}
+    .hire-medical .absolute-graphics {right: -70px;bottom: -22px;}
+    .visit-side .absolute-graphics{right: -70px;}
+    .health-checkup .absolute-graphics{left: -65px;}
+    .hire-non-medical .absolute-graphics {left: -80px;bottom: -22px;}
+}
